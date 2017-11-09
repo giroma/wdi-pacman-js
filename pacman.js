@@ -94,7 +94,9 @@ function eatPellet() {
 
 function eatGhost(ghost) {
   if (ghost.edible){
-    console.log('\nEaten ');
+    console.log('\n'+ ghost.name +' eaten ');
+    score += 200
+    ghost.edible = false
   }
   else{
     console.log('\nLife lost');
