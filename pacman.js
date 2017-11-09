@@ -60,13 +60,19 @@ function displayMenu() {
   console.log('\n\nSelect Option:\n');  // each \n creates a new line
   console.log('(d) Eat Dot');
   if (pellets > 0) console.log('(p) Eat Power-Pellet');
-  console.log('(1) Eat Inky');
-  console.log('(2) Eat Blinky');
-  console.log('(3) Eat Pinky');
-  console.log('(4) Eat Clyde');
+  console.log('(1) Eat Inky ' + change(inky.edible));
+  console.log('(2) Eat Blinky '+ change(blinky.edible));
+  console.log('(3) Eat Pinky '+ change(pinky.edible));
+  console.log('(4) Eat Clyde '+ change(clyde.edible));
   console.log('(q) Quit');
 }
-
+function change(type) {
+  if (type) {
+    return '(edible)'
+  }else {
+    return '(inedible)'
+  }
+}
 function displayPrompt() {
   // process.stdout.write is similar to console.log except it doesn't add a new line after the text
   process.stdout.write('\nWaka Waka :v '); // :v is the Pac-Man emoji.
